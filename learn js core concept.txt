@@ -1,0 +1,53 @@
+Execution content:
+1. js ar moddha execution context ar moddha js jokhon js code k pore source code and code k choto choto ongsha venge fele take tokenization bole and then sob token aksatha add hoye akta tree create kore jeta k AST(Abstract Syntax Tree) bole then AST tree create hoye gale Machine code binary a convert hoi then seta browser a show hoi. AST tree structure dekhte chaile onek online a site ace j gula te dekha jai actually kivabe js code compile kore and execute kore browser a
+2. lexical context: lexical context holo code ar moddha prottekta ta separate part start to end porjonto code a k j jaigai rakha ace start line to end line sei ongsho take lexical context bole
+3. EXECUTION CONTEXT: execution context holo code ar moddha j code ta js ast tree ar maddhome bujhte pare ata user execute hocce ba kortecha sei context take bole execution context aro clear kore bolle dhoro amader akta file a onek code ace so total code ar moddha j j code tuku execute hocce sei ongsho take bole execution context
+4. Global Execution Context(GEC): j file a kichu na thakle total blank thakle tarpor o js by default akta execution context create kore j take bole GEC. Global mane holo akta js file ar moddha function ar baire ja kichu ace sob kichu global execution context ar part so GEC first time create korar  somoy amader k duita jinis dei akta holo window object arekta holo this. so this and window object value exact same and dutoi akoi jinis refer kore 
+5. GEC duita part a device hoi akta holo creation phase and arekta holo execution phase. and creation phase ar moddha window: global object create hoi and this keyword window object k refer kore
+6. GEC create howar pore judi code ar moddha kuno function thake tahole function ar jonno arekta context create hoi jetake bole function execution context (FEC) ai fec ar moddha o creation phasse and execution phase royecha
+7. GEC and FEC create howar pore js code ar execute korte hoi tahole take sob kichu track korte hoi jeta js engine akta special jinis rakha jeta k bole execution context stack ba call stack 
+8. execution context ar final and end part holo function execution stack/callstack so ai callstack ar moddha memory management ar duita jinis akta holo stack arekta holo heap, stack holo akta database management and ata lifo te kaj kore
+9. js executio context cholar somoy judi kuno function call hoi ba execute hoi tahole js sei function call ar nicha kuno kuno code ar execute korbe na age tar sei call korar function ar FEC create setar kaj ses hole function ar nichar code abar execute kora suru korbe
+
+
+
+HOISTING: 
+
+Hoisting holo execution context ar creation phase a variable and function ar jonno memory  creation korar process variable ar memory creation ar pore variable ta undefine hoye jai and function ar jonno function defination ta memory akta address a chole jai tar reference ta oi perticular stack a fill up hoye jai ata kei hoisting bole
+note: jokhon e js code dekha kew bole atar output ki hobe tahole sob somoy executing context ar concept diye think kore answer dite hobe
+note: always var k avoid kora and function defination ar age function call kora avoid korte hobe tahole hoisting ar moto issue hobe na
+
+
+
+SCOPE AND SCOPE CHAIN: 
+
+amra jokhon variable and values ar kotha boli tokhon variable ba values gulo access ba tader ostrito puro jinis take j control kore take bola hoi scope
+
+scope 3 o 4 type ar hoi like
+1. global scope
+2. functional scope 
+3. block scope or
+4. module scope
+
+defination:
+global j variable ar other kichu declare kora hoi take global scope bole function scope ar moddha declare korle take functional scope bole and {block} ar moddha kuno kichu declare korle take block scope bole. global scope sobai access korte pare function scope sudhu function ar structure ar moddha accessable and block scope {} ai bracket ar moddha accessable 
+
+rule 1: global variabel assign ba declare korar somoy always const use korte hobe jeno j kew in future a change korte na pare
+rule 2: global variable use na kora always function scope ba block scope ar moddha assign kora better
+rule 3: always declare variable with const and jokon value change hobe na tokhon const use korte hobe
+rule 4: judi value change korte hoi tahole let use korte hobe
+rule 5: let, const holo block scope and var holo function scope so let and const k block ar baire access kora jai na abar var k function scope ar baire use kora jai na but var judi block scope ar moddha thake tahole block scope ar baire theke var k access kora jai
+  
+VALUES AND REFERENCES:
+
+value -> Information/data: value niye kotha bolte hole amader js ar sobkichu niye vabte hoi like primitive, non-primitive, operator, etc sob kichu mile akta value create hoi
+there are two types of data type one is primitive and non-primitive 
+PRIMITIVE: pass by value: holo js ar basic data type mean j data type by default lagbei, primitive ar khettre amra j value ta assign korteci sei value ta sompurno vabe tar dewa variable ar assign hocce ar baire ar kichu na ar pore judi same variable  a new value assign hoi and j value tate notun value assign sei varible ta judi tar age kothao use hoye thake taholeo kichu jai ase na se tar current position maintain kore chole simple vabe bolle pass by value jeta jokhon thake ata holo primitive ar rule
+NON-PRIMITIVE: primitive data type diye non-primitive data type create kora hoi : pass by reference: non-primitive value niye deal korte hole value always memory reference k decode kore j khane amara primitive value dekhacilam j se tar current value direct pass by value kora jacce non-primitive ar khette memory location id k refer kore
+ 
+note: short kore bolte gale primitive ar khette akta variable ar value onek jaigai use hole always current value dhore rakha mutation hoi na sei variable ar satha related jara ace tader satha but non-primitive ar khettre jhetu memory address k locate kore se khettre ak jaigai mutation hole tar satha related sobai effected hobe
+
+
+
+
+
